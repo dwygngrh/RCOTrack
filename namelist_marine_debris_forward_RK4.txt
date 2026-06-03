@@ -1,0 +1,66 @@
+[Startup]
+branding = Lagrangian Trajectory Model, RCO-BRIN, Indonesia-2026
+
+[Simulation]
+project_name = test_run
+# Choose model mode: 'marine_debris' (surface only) or 'microplastic' (3D transport)
+mode = marine_debris
+
+# NEW: Toggle dimensionality
+# Options: 2.5D, 3DUV, 3DUVW
+dimension = 2.5D
+
+# Time step in seconds. Positive for Forward, negative for Backward.
+dt = 3600
+
+# Numerical Integration: euler, RK2, RK4
+scheme = RK4
+
+# Simulation Dates
+start_simulation = 2024-01-01 23:00:00
+end_simulation = 2024-02-10 23:00:00
+
+# Output frequency in seconds (e.g., 3600 for hourly)
+write_frequency = 3600
+
+[Diffusion]
+# Horizontal diffusion coefficient (m^2/s)
+Kh = 1.0
+# Vertical diffusion coefficient (m^2/s)
+Kz = 0.001
+
+[Files]
+cmems_dir = /mnt/d/CMEMS_Indo/
+era5_dir = /mnt/d/ERA5_native
+output_dir = /mnt/d/Final_LTM2/LTM_github/output 
+source_csv = forward_sources.csv
+
+[Release]
+start_date_release = 2024-01-01 22:00:00
+end_date_release = 2024-02-10 22:00:00
+# Stochastic rate: particles per 24-hour period
+release_rate_per_day = 2
+diameter = 1000
+
+[MarineDebris]
+# Used only if mode = marine_debris
+type = macro_plastic
+leeway_macro_plastic = 0.03
+leeway_human = 0.04
+leeway_wood = 0.02
+leeway_styrofoam = 0.05
+beaching_probability = 0.05
+
+[Microplastic]
+# Parameters for 3D settling and biofouling logic
+polymer_type = PET
+diameter_mm = 0.1
+shape = sphere
+
+# Sinking Velocity Logic: 'static' or 'dynamic'
+ws_type = static
+ws_static = 0.0001 
+
+# Biofouling settings (Adjusted for less aggressive sinking)
+biofilm_growth_rate = 0.001 
+biofilm_density = 1400.0

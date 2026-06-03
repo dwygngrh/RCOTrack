@@ -1,0 +1,34 @@
+"""
+Copyright 2026 Dwiyoga Nugroho/Research Center For Oceanology-BRIN Indonesia. All rights reserved.
+
+Non-Commercial, No-Derivatives Academic License Terms:
+
+1. License Grant: You are granted a non-exclusive, non-transferable, royalty-free
+   license to run and execute this LTM code solely for non-commercial, personal,
+   educational, or academic research purposes.
+
+2. Restrictions:
+   - Commercial Use: You may not use this software, its source code, or any
+     oceanographic outputs generated directly by it for commercial purposes,
+     corporate research, or financial gain without explicit written permission.
+   - No Derivatives: You may not modify, alter, transform, or build upon this
+     source code. You may not distribute modified versions of the code.
+   - Attribution: Any public use, academic publication, or presentation of results
+     utilizing this code must prominently credit the author: Dwiyoga Nugroho/
+     Research Center For Oceanology-BRIN Indonesia.
+
+3. Distribution: You may redistribute exact, unmodified copies of this software
+   repository to others, provided this license file remains intact.
+"""
+
+
+from numba import njit
+
+@njit
+def get_leeway(debris_type):
+    """Windage coefficients based on debris type and buoyancy."""
+    if debris_type == "macro_plastic": return 0.03
+    elif debris_type == "human": return 0.04
+    elif debris_type == "wood": return 0.02
+    elif debris_type == "styrofoam": return 0.05
+    return 0.01
