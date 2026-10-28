@@ -1,7 +1,7 @@
 # RCOTrack-V1
 RCOTrack-V1: A 3D Lagrangian Particle Trajectory Model for Micro- and Macroplastics
 
-RCOTrack-V1 has been registered with the Ministry of Law of the Republic of Indonesia under Copyright Record No: EC002026212464.
+RCOTrack-V1 has been registered with the Ministry of Law of the Republic of Indonesia under Copyright Record No: EC002026212464. 
 
 RCOTrack-V1 is distributed under the Apache-2.0 license, with the additional restriction that it is free to use for non-commercial purposes only, and no profit-making is permitted.
 
